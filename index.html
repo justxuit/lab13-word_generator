@@ -4,6 +4,9 @@
   <meta charset="utf-8">
   <link type="text/css" rel="stylesheet" href="style.css"/>
 
+  <script src="libs/angular.min.js"></script>
+  <script src="script.js"></script>
+
   <title>Corporate-tify</title>
 </head>
 
@@ -11,24 +14,23 @@
 <body ng-controller="wordGeneratorController">
 
   <div id="button-wrapper">
-    <button type="button" ng-click="wordclick(generateWord)">WORDS</button>
-    <button type="button" ng-click="fancywordclick()">FANCY WORDS</button>
-    <button type="button" ng-click="phraseclick(generatePhrase)">PHRASES</button>
-    <button type="button" >FANCY PHRASES</button>
+    <button ng-click="wordclick()">WORDS</button>
+    <button ng-click="fancywordclick()">FANCY WORDS</button>
+    <button ng-click="phraseclick()">PHRASES</button>
+    <button ng-click="fancyphraseclick()">FANCY PHRASES</button>
   </div>
 
   <div id="text-output">
-    <span ng-repeat="word in wordDisplay track by $index">{{word}} </span>
-
-    <span ng-repeat="fancyword in fancyWordDisplay track by $index">{{fancyword}} </span>
+    <ul>
+      <li ng-repeat="word in wordDisplay track by $index">{{word}} </li>
+    </ul>
   </div>
 
 
 
 
 
-<script src="libs/angular.min.js"></script>
-<script src="script.js"></script>
+
 
 </body>
 </html>

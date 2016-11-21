@@ -9,23 +9,23 @@ app.controller("wordGeneratorController", function($scope){
 
   $scope.randPhrase = ["promoting synergy ", "send some faxes ", "human resources "];
 
-  $scope.cssClass = ["blue"];
+  $scope.cssClass = ["blue", "big"];
 
 
 
-  $scope.wordclick = function(generateWord){
+  $scope.wordclick = function(){
     $scope.wordDisplay.push($scope.randWord[Math.floor(Math.random() * 8)]);
     console.log($scope.wordDisplay);
   };
 
-  $scope.phraseclick = function(generatePhrase){
+  $scope.phraseclick = function(){
     $scope.wordDisplay.push($scope.randPhrase[Math.floor(Math.random() * 3)]);
   };
 
 
   $scope.fancywordclick = function(){
     $scope.fancyWordDisplay.push({
-      text: $scope.randWord[Math.floor(Math.random()*8)],  cssClass: "textblue"
+      text: $scope.randWord[Math.floor(Math.random()*8)],  cssClass: "blue"
     });
 
     console.log($scope.fancyWordDisplay);
