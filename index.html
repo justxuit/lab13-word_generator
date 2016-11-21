@@ -2,7 +2,7 @@
 <html ng-app="wordModule">
 <head>
   <meta charset="utf-8">
-  <link type="text/css" rel="stylesheet" href="style.css"/>
+  <link type="text/css" rel="stylesheet" href="style.css">
 
   <script src="libs/angular.min.js"></script>
   <script src="script.js"></script>
@@ -22,7 +22,7 @@
 
   <div id="text-output">
     <ul>
-      <li ng-repeat="word in wordDisplay track by $index" ng-class=wordDisplay.class>{{word.text}}</li>
+      <li ng-repeat="word in wordDisplay track by $index" class="ng-class: {{word.class}}">{{word.text}}</li>
     </ul>
   </div>
 

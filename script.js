@@ -3,40 +3,49 @@ var app = angular.module("wordModule", []);
 app.controller("wordGeneratorController", function($scope){
   $scope.wordDisplay = [];
 
-  $scope.wordBank = ["memo ", "budget ", "manager ", "co-worker ", "project ", "overtime ", "utilization ", "implementation "];
+  var wordBank = ["memo ", "budget ", "manager ", "co-worker ", "project ", "overtime ", "utilization ", "implementation "];
 
-  $scope.phraseBank = ["promoting synergy ", "send some faxes ", "human resources "];
+  var phraseBank = ["promoting synergy ", "send some faxes ", "human resources "];
 
-  $scope.styleBank = ["blue", "big", "bold"];
+  var styleBank = ["blue", "big", "bold"];
+
 
   $scope.wordclick = function(){
-    $scope.randWord = $scope.wordBank[Math.floor(Math.random()*$scope.wordBank.length)];
+    var randWord = wordBank[Math.floor(Math.random()*wordBank.length)];
 
     $scope.wordDisplay.push({
-      text: $scope.randWord,
+      text: randWord,
       class: "none"
     });
   };
 
   $scope.phraseclick = function(){
-    $scope.randPhrase = $scope.phraseBank[Math.floor(Math.random()*$scope.phraseBank.length)];
+    var randPhrase = phraseBank[Math.floor(Math.random()*phraseBank.length)];
 
     $scope.wordDisplay.push({
-      text: $scope.randPhrase,
+      text: randPhrase,
       class: "none"
     });
   };
 
   $scope.fancywordclick = function(){
-    $scope.randWord = $scope.wordBank[Math.floor(Math.random()*$scope.wordBank.length)];
-    $scope.randStyle = $scope.styleBank[Math.floor(Math.random()*$scope.styleBank.length)];
+    var randWord = wordBank[Math.floor(Math.random()*wordBank.length)];
+    var randStyle = styleBank[Math.floor(Math.random()*styleBank.length)];
 
     $scope.wordDisplay.push({
-      text: $scope.randWord,
-      class: $scope.randStyle
+      text: randWord,
+      class: randStyle
     });
+  };
 
-    console.log($scope.wordDisplay);
+  $scope.fancyphraseclick = function(){
+    randPhrase = phraseBank[Math.floor(Math.random()*phraseBank.length)];
+    randStyle = styleBank[Math.floor(Math.random()*styleBank.length)];
+
+    $scope.wordDisplay.push({
+      text: randPhrase,
+      class: randStyle
+    });
   };
 
 });
