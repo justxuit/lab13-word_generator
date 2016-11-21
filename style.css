@@ -1,3 +1,11 @@
 .blue {
   color: blue;
 }
+
+.big {
+  font-size: 2em;
+}
+
+.bold {
+  font-weight: bold;
+}

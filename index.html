@@ -15,14 +15,14 @@
 
   <div id="button-wrapper">
     <button ng-click="wordclick()">WORDS</button>
-    <button ng-click="fancywordclick()">FANCY WORDS</button>
     <button ng-click="phraseclick()">PHRASES</button>
+    <button ng-click="fancywordclick()">FANCY WORDS</button>
     <button ng-click="fancyphraseclick()">FANCY PHRASES</button>
   </div>
 
   <div id="text-output">
     <ul>
-      <li ng-repeat="word in wordDisplay track by $index">{{word}} </li>
+      <li ng-repeat="word in wordDisplay track by $index" ng-class=wordDisplay.class>{{word.text}}</li>
     </ul>
   </div>
 

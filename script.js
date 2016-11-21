@@ -3,38 +3,40 @@ var app = angular.module("wordModule", []);
 app.controller("wordGeneratorController", function($scope){
   $scope.wordDisplay = [];
 
-  $scope.fancyWordDisplay = [];
+  $scope.wordBank = ["memo ", "budget ", "manager ", "co-worker ", "project ", "overtime ", "utilization ", "implementation "];
 
-  $scope.randWord = ["memo ", "budget ", "manager ", "co-worker ", "project ", "overtime ", "utilization ", "implementation "];
+  $scope.phraseBank = ["promoting synergy ", "send some faxes ", "human resources "];
 
-  $scope.randPhrase = ["promoting synergy ", "send some faxes ", "human resources "];
-
-  $scope.cssClass = ["blue", "big"];
-
-
+  $scope.styleBank = ["blue", "big", "bold"];
 
   $scope.wordclick = function(){
-    $scope.wordDisplay.push($scope.randWord[Math.floor(Math.random() * 8)]);
-    console.log($scope.wordDisplay);
+    $scope.randWord = $scope.wordBank[Math.floor(Math.random()*$scope.wordBank.length)];
+
+    $scope.wordDisplay.push({
+      text: $scope.randWord,
+      class: "none"
+    });
   };
 
   $scope.phraseclick = function(){
-    $scope.wordDisplay.push($scope.randPhrase[Math.floor(Math.random() * 3)]);
-  };
+    $scope.randPhrase = $scope.phraseBank[Math.floor(Math.random()*$scope.phraseBank.length)];
 
+    $scope.wordDisplay.push({
+      text: $scope.randPhrase,
+      class: "none"
+    });
+  };
 
   $scope.fancywordclick = function(){
-    $scope.fancyWordDisplay.push({
-      text: $scope.randWord[Math.floor(Math.random()*8)],  cssClass: "blue"
+    $scope.randWord = $scope.wordBank[Math.floor(Math.random()*$scope.wordBank.length)];
+    $scope.randStyle = $scope.styleBank[Math.floor(Math.random()*$scope.styleBank.length)];
+
+    $scope.wordDisplay.push({
+      text: $scope.randWord,
+      class: $scope.randStyle
     });
 
-    console.log($scope.fancyWordDisplay);
-  };
-
-
-  $scope.fancywordclick = function(generateWord){
-    $scope.fancyWordDisplay.push($scope.randWord[Math.floor(Math.random() * 8)]);
-    console.log($scope.fancyWordDisplay);
+    console.log($scope.wordDisplay);
   };
 
 });
